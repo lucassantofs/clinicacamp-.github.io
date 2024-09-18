@@ -1,0 +1,259 @@
+/* Estilização geral */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Container Wrapper */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1200px; /* Limita a largura máxima */
+    margin: 0 auto;
+    padding: 20px; /* Adiciona algum espaçamento interno */
+}
+
+/* Slider principal */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Limita a largura máxima do slider */
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto; /* Adiciona espaçamento em volta do slider */
+}
+
+/* Container de slides */
+.slides {
+    display: flex;
+    width: 100%;
+    transition: margin-left 0.8s ease-in-out;
+}
+
+/* Slide individual */
+.slide {
+    width: 100%;
+    flex: 0 0 100%; /* Garante que o slide ocupe 100% da largura do slider */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 100%;
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px;
+}
+
+/* Navegação manual */
+input[type="radio"] {
+    display: none;
+}
+
+.manual-navigation {
+    position: absolute;
+    width: 100%;
+    bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.manual-btn:hover {
+    background-color: #0c0707;
+}
+
+/* Transições de margem para os slides com base nos radio buttons */
+#radio1:checked ~ .slides {
+    margin-left: 0;
+}
+
+#radio2:checked ~ .slides {
+    margin-left: -100%;
+}
+
+#radio3:checked ~ .slides {
+    margin-left: -200%;
+}
+
+/* Estilos para os botões de navegação automática */
+.navigation-auto {
+    position: absolute;
+    width: 100%;
+    bottom: 60px; /* Ajusta a posição vertical para não sobrepor o conteúdo */
+    display: flex;
+    justify-content: center;
+}
+
+.navigation-auto div {
+    border: 2px solid rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 1s;
+    margin: 0 10px;
+}
+
+/* Mudança de cor dos botões ao selecionar os rádios */
+#radio1:checked ~ .navigation-auto .auto-btn1 {
+    background-color: #0c0707;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2 {
+    background-color: #0c0707;
+}
+
+#radio3:checked ~ .navigation-auto .auto-btn3 {
+    background-color: #0c0707;
+}
+
+/* Menu */
+.menu {
+    background-color: #2c3e50;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu ul li {
+    margin: 0 10px;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 8px 12px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu ul li a:hover {
+    background-color: #34495e;
+    border-radius: 5px;
+}
+
+/* Cabeçalho */
+.header {
+    background-color: #f8f8f8;
+    color: rgb(0, 0, 0);
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.header p {
+    font-size: 1.125rem;
+    margin-top: 10px;
+}
+
+/* Conteúdo */
+.content {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #ecf0f1;
+    color: #2c3e50;
+}
+
+.content h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+}
+
+/* Rodapé */
+.footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .content h2 {
+        font-size: 1.5rem;
+    }
+
+    .content p {
+        font-size: 1rem;
+    }
+
+    .menu ul li {
+        margin: 0 5px;
+    }
+
+    .menu ul li a {
+        font-size: 0.875rem;
+        padding: 5px 8px;
+    }
+
+    .navigation-auto div {
+        margin: 0 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider {
+        height: 300px; /* Ajusta a altura do slider em dispositivos menores */
+    }
+
+    .header h1 {
+        font-size: 1.25rem;
+    }
+
+    .header p {
+        font-size: 0.875rem;
+    }
+
+    .content h2 {
+        font-size: 1.25rem;
+    }
+
+    .content p {
+        font-size: 0.875rem;
+    }
+
+    .menu ul li {
+        margin: 0 2px;
+    }
+
+    .menu ul li a {
+        font-size: 0.75rem;
+        padding: 4px 6px;
+    }
+}

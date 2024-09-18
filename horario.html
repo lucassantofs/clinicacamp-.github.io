@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horário de Atendimento - Clínica</title>
+
+    <style>
+        /* Resetando estilos básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Menu de navegação */
+        .menu {
+            background-color: #2c3e50;
+            padding: 15px 0;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .menu ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu ul li {
+            margin: 0 15px;
+        }
+
+        .menu ul li a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: color 0.3s;
+        }
+
+        .menu ul li a:hover {
+            color: #1abc9c;
+        }
+
+        /* Cabeçalho */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .header img {
+            max-width: 10%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .header hr {
+            border: 0;
+            height: 3px;
+            background: #1abc9c;
+            margin: 20px 0;
+        }
+
+        /* Conteúdo */
+        .content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .content p {
+            font-size: 1.5em;
+            color: #2c3e50;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* Tabela de horários */
+        .table-wrapper {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 40%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        table th,
+        table td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        table th {
+            background-color: #1abc9c;
+            color: white;
+            font-size: 1.1em;
+        }
+
+        table td {
+            border-bottom: 1px solid #ddd;
+            font-size: 1.1em;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Rodapé */
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer ul li {
+            margin: 5px 0;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .menu ul {
+                flex-direction: column;
+            }
+
+            .menu ul li {
+                margin: 10px 0;
+            }
+
+            table th, table td {
+                padding: 10px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Menu -->
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Página Principal</a></li>
+                <li><a href="sobre.html">Sobre a Clínica</a></li>
+                <li><a href="horario.html">Horário de Atendimento</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </div>
+
+        <!-- Main Section -->
+        <div class="main">
+            <div class="header">
+                <img src="imagens/calendar.webp" height="150" alt="Horário de Atendimento">
+                <hr>
+            </div>
+
+            <div class="content">
+                <p>Horário de Atendimento</p>
+                <div class="table-wrapper">
+                    <table>
+                        <tr>
+                            <th>Serviços</th>
+                            <th>Segunda a Sexta</th>
+                            <th>Sábados</th>
+                            <th>Feriados</th>
+                        </tr>
+                        <tr>
+                            <td>Clínica Geral</td>
+                            <td>08h - 19h</td>
+                            <td>08h - 14h</td>
+                            <td>08h - 14h</td>
+                        </tr>
+                        <tr>
+                            <td>Psicologia</td>
+                            <td>08h - 19h</td>
+                            <td>08h - 14h</td>
+                            <td>08h - 14h</td>
+                        </tr>
+                        <tr>
+                            <td>Pediatria</td>
+                            <td>08h - 19h</td>
+                            <td>08h - 14h</td>
+                            <td>08h - 14h</td>
+                            
+                        </tr>
+                        <tr>
+                            <td>Oftalmologia</td>
+                            <td>08h - 19h</td>
+                            <td>08h - 14h</td>
+                            <td>08h - 14h</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <ul>
+                    <li>Endereço: Rua Bem ali, 309</li>
+                    <li>Telefone: (61) 3039-2020</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
