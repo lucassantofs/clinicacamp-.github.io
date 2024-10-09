@@ -1,4 +1,3 @@
-/* Estilização geral */
 body {
     margin: 0;
     padding: 0;
@@ -6,40 +5,36 @@ body {
     background-color: #f0f0f0;
 }
 
-/* Container Wrapper */
 .wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     width: 100%;
-    max-width: 1200px; /* Limita a largura máxima */
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 20px; /* Adiciona algum espaçamento interno */
+    padding: 20px;
 }
 
-/* Slider principal */
 .slider {
     position: relative;
     width: 100%;
-    max-width: 800px; /* Limita a largura máxima do slider */
+    max-width: 800px;
     height: auto;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    margin: 20px auto; /* Adiciona espaçamento em volta do slider */
+    margin: 20px auto;
 }
 
-/* Container de slides */
 .slides {
     display: flex;
     width: 100%;
     transition: margin-left 0.8s ease-in-out;
 }
 
-/* Slide individual */
 .slide {
     width: 100%;
-    flex: 0 0 100%; /* Garante que o slide ocupe 100% da largura do slider */
+    flex: 0 0 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,11 +42,10 @@ body {
 
 .slide img {
     width: 100%;
-    height: auto; /* Mantém a proporção da imagem */
+    height: auto;
     border-radius: 10px;
 }
 
-/* Navegação manual */
 input[type="radio"] {
     display: none;
 }
@@ -64,12 +58,10 @@ input[type="radio"] {
     justify-content: center;
 }
 
-
 .manual-btn:hover {
     background-color: #0c0707;
 }
 
-/* Transições de margem para os slides com base nos radio buttons */
 #radio1:checked ~ .slides {
     margin-left: 0;
 }
@@ -82,11 +74,10 @@ input[type="radio"] {
     margin-left: -200%;
 }
 
-/* Estilos para os botões de navegação automática */
 .navigation-auto {
     position: absolute;
     width: 100%;
-    bottom: 60px; /* Ajusta a posição vertical para não sobrepor o conteúdo */
+    bottom: 60px;
     display: flex;
     justify-content: center;
 }
@@ -100,7 +91,6 @@ input[type="radio"] {
     margin: 0 10px;
 }
 
-/* Mudança de cor dos botões ao selecionar os rádios */
 #radio1:checked ~ .navigation-auto .auto-btn1 {
     background-color: #0c0707;
 }
@@ -113,7 +103,6 @@ input[type="radio"] {
     background-color: #0c0707;
 }
 
-/* Menu */
 .menu {
     background-color: #2c3e50;
     padding: 10px 0;
@@ -148,7 +137,6 @@ input[type="radio"] {
     border-radius: 5px;
 }
 
-/* Cabeçalho */
 .header {
     background-color: #f8f8f8;
     color: rgb(0, 0, 0);
@@ -166,7 +154,6 @@ input[type="radio"] {
     margin-top: 10px;
 }
 
-/* Conteúdo */
 .content {
     padding: 40px 20px;
     text-align: center;
@@ -184,7 +171,6 @@ input[type="radio"] {
     line-height: 1.6;
 }
 
-/* Rodapé */
 .footer {
     background-color: #2c3e50;
     color: white;
@@ -195,7 +181,6 @@ input[type="radio"] {
     width: 100%;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .header h1 {
         font-size: 1.5rem;
@@ -229,7 +214,7 @@ input[type="radio"] {
 
 @media (max-width: 480px) {
     .slider {
-        height: 300px; /* Ajusta a altura do slider em dispositivos menores */
+        height: 300px;
     }
 
     .header h1 {
