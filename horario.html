@@ -1,217 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horário de Atendimento - Clínica</title>
-
+    <title>Horário de Atendimento | Clínica Camp+</title>
+    <meta name="description" content="Confira os horários de atendimento da Clínica Camp+ para todos os serviços médicos oferecidos.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="imagens/Green and White Modern Medical Logo.png" type="image/x-icon">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-  <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f7f6;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        .menu {
-            background-color: #2c3e50;
-            padding: 15px 0;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .menu ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-        }
-
-        .menu ul li {
-            margin: 0 15px;
-        }
-
-        .menu ul li a {
-            color: #ecf0f1;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: color 0.3s;
-        }
-
-        .menu ul li a:hover {
-            color: #1abc9c;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .header img {
-            max-width: 10%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        .header hr {
-            border: 0;
-            height: 3px;
-            background: #1abc9c;
-            margin: 20px 0;
-        }
-
-        .content {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .content p {
-            font-size: 1.5em;
-            color: #2c3e50;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .table-wrapper {
-            overflow-x: auto;
-        }
-
-        table {
-            width: 40%;
-            border-collapse: collapse;
-            margin: 0 auto;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        table th,
-        table td {
-            padding: 15px;
-            text-align: center;
-        }
-
-        table th {
-            background-color: #1abc9c;
-            color: white;
-            font-size: 1.1em;
-        }
-
-        table td {
-            border-bottom: 1px solid #ddd;
-            font-size: 1.1em;
-        }
-
-        table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        .footer {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 20px;
-            text-align: center;
-            border-radius: 8px;
-            margin-top: 40px;
-        }
-
-        .footer ul {
-            list-style: none;
-        }
-
-        .footer ul li {
-            margin: 5px 0;
-        }
-
-        @media (max-width: 768px) {
-            .menu ul {
-                flex-direction: column;
-            }
-
-            .menu ul li {
-                margin: 10px 0;
-            }
-
-            table th, table td {
-                padding: 10px;
-                font-size: 1em;
-            }
-        }
-    </style>
 <body>
     <div class="wrapper">
         <div class="menu">
             <ul>
-                <li><a href="index.html">Página Principal</a></li>
-                <li><a href="sobre.html">Sobre a Clínica</a></li>
-                <li><a href="horario.html">Horário de Atendimento</a></li>
-                <li><a href="contato.html">Contato</a></li>
+                <li><a href="index.html"><i class="fas fa-home"></i> Página Principal</a></li>
+                <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre a Clínica</a></li>
+                <li><a href="horario.html" class="active"><i class="fas fa-calendar-alt"></i> Horário de Atendimento</a></li>
+                <li><a href="contato.html"><i class="fas fa-envelope"></i> Contato</a></li>
             </ul>
         </div>
 
-        <div class="main">
-            <div class="header">
-                <img src="imagens/calendar.webp" height="150" alt="Horário de Atendimento">
-                <hr>
+        <div class="header">
+            <h1>Horário de Atendimento</h1>
+            <p>Confira abaixo os horários disponíveis para cada especialidade médica.</p>
+        </div>
+
+        <div class="content">
+            <div class="schedule-header">
+                <div class="schedule-icon">
+                    <i class="fas fa-clock fa-3x"></i>
+                </div>
+                <div class="schedule-info">
+                    <h2>Nossa Disponibilidade</h2>
+                    <p>A Clínica Camp+ está comprometida em oferecer horários flexíveis e convenientes para nossos pacientes. Consulte a tabela abaixo para verificar a disponibilidade de cada serviço.</p>
+                </div>
             </div>
 
-            <div class="content">
-                <p>Horário de Atendimento</p>
-                <div class="table-wrapper">
-                    <table>
+            <div class="table-container">
+                <table class="schedule-table">
+                    <thead>
                         <tr>
-                            <th>Serviços</th>
-                            <th>Segunda a Sexta</th>
-                            <th>Sábados</th>
-                            <th>Feriados</th>
+                            <th><i class="fas fa-stethoscope"></i> Serviços</th>
+                            <th><i class="fas fa-calendar-week"></i> Segunda a Sexta</th>
+                            <th><i class="fas fa-calendar-day"></i> Sábados</th>
+                            <th><i class="fas fa-star"></i> Feriados</th>
+                            <th><i class="fas fa-money-bill-wave"></i> Preço</th>
                         </tr>
+                    </thead>
+                    <tbody>
                         <tr>
                             <td>Clínica Geral</td>
                             <td>08h - 19h</td>
                             <td>08h - 14h</td>
                             <td>08h - 14h</td>
+                            <td>R$ 150,00</td>
                         </tr>
                         <tr>
                             <td>Psicologia</td>
                             <td>08h - 19h</td>
                             <td>08h - 14h</td>
                             <td>08h - 14h</td>
+                            <td>R$ 180,00</td>
                         </tr>
                         <tr>
                             <td>Pediatria</td>
                             <td>08h - 19h</td>
                             <td>08h - 14h</td>
                             <td>08h - 14h</td>
-                            
+                            <td>R$ 160,00</td>
                         </tr>
                         <tr>
-                            <td>Oftalmologista</td>
+                            <td>Oftalmologia</td>
                             <td>08h - 19h</td>
                             <td>08h - 14h</td>
                             <td>08h - 14h</td>
+                            <td>R$ 200,00</td>
                         </tr>
-                    </table>
+                        <tr>
+                            <td>Cardiologia</td>
+                            <td>08h - 19h</td>
+                            <td>08h - 14h</td>
+                            <td>Fechado</td>
+                            <td>R$ 250,00</td>
+                        </tr>
+                        <tr>
+                            <td>Neurologia</td>
+                            <td>09h - 18h</td>
+                            <td>09h - 13h</td>
+                            <td>Fechado</td>
+                            <td>R$ 280,00</td>
+                        </tr>
+                        <tr>
+                            <td>Ortopedia</td>
+                            <td>08h - 19h</td>
+                            <td>08h - 14h</td>
+                            <td>Fechado</td>
+                            <td>R$ 200,00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="booking-info">
+                <h3><i class="fas fa-info-circle"></i> Informações Importantes</h3>
+                <ul>
+                    <li>Para consultas de emergência, entre em contato pelo telefone <strong>(11) 2345-6789</strong>.</li>
+                    <li>Cancelamentos devem ser feitos com pelo menos 24h de antecedência.</li>
+                    <li>Chegue com 15 minutos de antecedência para procedimentos administrativos.</li>
+                    <li>Aceitamos diversos planos de saúde. Consulte nossa recepção para mais informações.</li>
+                </ul>
+                <div class="cta-buttons">
+                    <a href="contato.html" class="cta-button"><i class="fas fa-calendar-check"></i> Agendar Consulta</a>
                 </div>
             </div>
+        </div>
 
-            <div class="footer">
-                <ul>
-                    <li>© 2024 Clínica Camp+. Todos os direitos reservados.</li>
-                </ul>
+        <div class="footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Clínica Camp+</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Principal, 123 - Centro</p>
+                    <p><i class="fas fa-phone"></i> (11) 2345-6789</p>
+                    <p><i class="fas fa-envelope"></i> contato@clinicacamp.com.br</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Clínica Camp+. Todos os direitos reservados.</p>
             </div>
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

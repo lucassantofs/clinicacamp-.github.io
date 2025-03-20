@@ -1,8 +1,23 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+    --border-radius: 10px;
+    --font-main: 'Poppins', sans-serif;
+}
+
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
+    font-family: var(--font-main);
+    background-color: #f8f9fa;
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
 .wrapper {
@@ -21,8 +36,8 @@ body {
     max-width: 800px;
     height: auto;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
     margin: 20px auto;
 }
 
@@ -43,7 +58,7 @@ body {
 .slide img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: var(--border-radius);
 }
 
 input[type="radio"] {
@@ -58,8 +73,17 @@ input[type="radio"] {
     justify-content: center;
 }
 
+.manual-btn {
+    border: 2px solid var(--light-color);
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    margin: 0 10px;
+}
+
 .manual-btn:hover {
-    background-color: #0c0707;
+    background-color: var(--primary-color);
 }
 
 #radio1:checked ~ .slides {
@@ -77,37 +101,41 @@ input[type="radio"] {
 .navigation-auto {
     position: absolute;
     width: 100%;
-    bottom: 60px;
+    bottom: 15px;
     display: flex;
     justify-content: center;
 }
 
 .navigation-auto div {
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid var(--light-color);
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 50%;
     cursor: pointer;
-    transition: background-color 1s;
+    transition: var(--transition);
     margin: 0 10px;
 }
 
 #radio1:checked ~ .navigation-auto .auto-btn1 {
-    background-color: #0c0707;
+    background-color: var(--primary-color);
 }
 
 #radio2:checked ~ .navigation-auto .auto-btn2 {
-    background-color: #0c0707;
+    background-color: var(--primary-color);
 }
 
 #radio3:checked ~ .navigation-auto .auto-btn3 {
-    background-color: #0c0707;
+    background-color: var(--primary-color);
 }
 
 .menu {
-    background-color: #2c3e50;
-    padding: 10px 0;
+    background-color: var(--dark-color);
+    padding: 15px 0;
     text-align: center;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .menu ul {
@@ -124,46 +152,69 @@ input[type="radio"] {
 }
 
 .menu ul li a {
-    color: white;
+    color: var(--light-color);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 1rem;
-    padding: 8px 12px;
-    transition: background-color 0.3s, color 0.3s;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: var(--transition);
+    display: inline-block;
 }
 
 .menu ul li a:hover {
-    background-color: #34495e;
-    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: white;
+    transform: translateY(-2px);
 }
 
 .header {
-    background-color: #f8f8f8;
-    color: rgb(0, 0, 0);
-    padding: 30px 20px;
+    background: linear-gradient(135deg, var(--light-color) 0%, #ffffff 100%);
+    color: var(--dark-color);
+    padding: 40px 20px;
     text-align: center;
+    border-radius: var(--border-radius);
+    margin-top: 20px;
+    box-shadow: var(--shadow);
 }
 
 .header h1 {
     margin: 0;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
 }
 
 .header p {
-    font-size: 1.125rem;
-    margin-top: 10px;
+    font-size: 1.25rem;
+    margin-top: 15px;
+    color: var(--text-color);
 }
 
 .content {
     padding: 40px 20px;
     text-align: center;
-    background-color: #ecf0f1;
-    color: #2c3e50;
+    background-color: white;
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+    margin: 20px 0;
+    box-shadow: var(--shadow);
 }
 
 .content h2 {
     font-size: 2rem;
     margin-bottom: 20px;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.content h2:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    margin: 10px auto;
 }
 
 .content p {
@@ -172,18 +223,48 @@ input[type="radio"] {
 }
 
 .footer {
-    background-color: #2c3e50;
-    color: white;
+    background-color: var(--dark-color);
+    color: var(--light-color);
     text-align: center;
     padding: 20px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    border-radius: var(--border-radius);
+    margin-top: auto;
+    box-shadow: var(--shadow);
+}
+
+.about-clinic {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.about-section {
+    background-color: white;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.about-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.about-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.about-section p {
+    line-height: 1.6;
 }
 
 @media (max-width: 768px) {
     .header h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     .header p {
@@ -204,21 +285,22 @@ input[type="radio"] {
 
     .menu ul li a {
         font-size: 0.875rem;
-        padding: 5px 8px;
+        padding: 6px 12px;
     }
 
-    .navigation-auto div {
+    .navigation-auto div, .manual-btn {
         margin: 0 5px;
+        padding: 4px;
+    }
+
+    .about-clinic {
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 480px) {
-    .slider {
-        height: 300px;
-    }
-
     .header h1 {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
 
     .header p {
@@ -234,11 +316,385 @@ input[type="radio"] {
     }
 
     .menu ul li {
-        margin: 0 2px;
+        margin: 5px 2px;
     }
 
     .menu ul li a {
         font-size: 0.75rem;
-        padding: 4px 6px;
+        padding: 5px 10px;
+    }
+}
+
+/* Estilo para os cards de serviços */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.service-card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: 30px 20px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-align: center;
+    height: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.service-card i {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    color: var(--dark-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.service-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Seção de chamada para ação */
+.cta-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    margin-top: 50px;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    color: white;
+}
+
+.cta-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.cta-section p {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: white;
+    color: var(--primary-color);
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer melhorado */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.footer-info {
+    text-align: left;
+}
+
+.footer-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--light-color);
+}
+
+.footer-info p {
+    margin: 8px 0;
+}
+
+.footer-info i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--light-color);
+    transition: var(--transition);
+}
+
+.footer-social a:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+/* Animações */
+.animated {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo para link ativo no menu */
+.menu ul li a.active {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .cta-section {
+        padding: 30px 20px;
+    }
+    
+    .cta-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-info {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .footer-social {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+}
+
+/* Estilo para a seção de valores */
+.values-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.value-item {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    padding: 30px 20px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.value-icon i {
+    font-size: 2.5rem;
+    color: white;
+}
+
+.value-item h3 {
+    color: var(--dark-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.value-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.about-section i {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Estilos para a página de horários */
+.schedule-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 25px;
+}
+
+.schedule-icon {
+    color: var(--primary-color);
+    flex-shrink: 0;
+}
+
+.schedule-info {
+    text-align: left;
+}
+
+.schedule-info h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.schedule-info h2:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--secondary-color);
+    margin-top: 10px;
+}
+
+.schedule-info p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 30px 0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.schedule-table th {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #2980b9 100%);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.schedule-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.schedule-table tbody tr:hover {
+    background-color: #f5f9ff;
+}
+
+.schedule-table i {
+    margin-right: 5px;
+}
+
+.booking-info {
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    margin-top: 40px;
+}
+
+.booking-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.booking-info ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.booking-info ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.booking-info ul li:before {
+    content: '•';
+    color: var(--secondary-color);
+    position: absolute;
+    left: 5px;
+    font-size: 1.5rem;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .schedule-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .schedule-info {
+        text-align: center;
+    }
+    
+    .schedule-info h2:after {
+        margin: 10px auto;
+    }
+    
+    .booking-info ul li {
+        padding-left: 20px;
     }
 }
